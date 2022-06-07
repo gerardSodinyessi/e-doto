@@ -22,6 +22,7 @@
 	<link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
 	<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<!-- Font Awesome -->
 	<!-- Start css -->
 	<!-- Slick css -->
@@ -1207,7 +1208,7 @@
 											<h5>Le 27 Avril/04/1995</h5>
 											<div><strong>Les causes</strong></div>
 											<p> Repudiandae et iusto quae reiciendis et quis Eius
-												vel ratione eius unde vitae rerum voluptates										
+												vel ratione eius unde vitae rerum voluptates
 												asperiores voluptatem Earum molestiae consequatur neque
 												etlon
 												sader mart dila</p>
@@ -1215,25 +1216,17 @@
 											<ul>
 												<li><strong style="color: blue; cursor: pointer;">
 														Amoxiciline:
-													</strong> (logos, brochures,infographics, presentations,
-													and
-													advertisements).<h5>Matin - Soir</h5>
+													</strong> (asperiores voluptatem Earum molestiae consequatur neque).<h5>Matin - Soir</h5>
 												</li>
 												<li><strong style="color: blue; cursor: pointer;">
 														Chroroquine:
-													</strong> (logos, brochures,infographics, presentations,
-													and
-													advertisements).<h5>Matin -Midi- Soir</h5>
+													</strong> (asperiores voluptatem Earum molestiae consequatur neque).<h5>Matin -Midi- Soir</h5>
 												</li>
 												<li><strong style="color: blue; cursor: pointer;"> Maloxine:
-													</strong> (logos, brochures,infographics, presentations,
-													and
-													advertisements).<h5>Matin - Soir</h5>
+													</strong> (asperiores voluptatem Earum molestiae consequatur neque).<h5>Matin - Soir</h5>
 												</li>
 												<li><strong style="color: blue; cursor: pointer;"> Malox:
-													</strong> (logos, brochures,infographics, presentations,
-													and
-													advertisements).<h5>Matin - Soir</h5>
+													</strong> (asperiores voluptatem Earum molestiae consequatur neque).<h5>Matin - Soir</h5>
 												</li>
 											</ul>
 											<div>
@@ -1376,7 +1369,7 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-info" data-dismiss="modal"
 						onclick="refuseFactureUBA()">Refuser</button>
-					<button type="button" class="btn btn-danger">Payer</button>
+					<button type="button" class="btn btn-danger payerVotreOrdonnanceC" data-toggle="modal" data-target="#basicModal">Payer</button>
 				</div>
 			</div>
 		</div>
@@ -1438,7 +1431,7 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-info" data-dismiss="modal"
 						onclick="refuseFactureMTN()">Refuser</button>
-					<button type="button" class="btn btn-danger">Payer</button>
+					<button type="button" class="btn btn-danger payerVotreOrdonnanceC" data-toggle="modal" data-target="#basicModal">Payer</button>
 				</div>
 			</div>
 		</div>
@@ -1469,11 +1462,93 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-info" data-dismiss="modal"
 						onclick="refuseFactureMOOW()">Refuser</button>
-					<button type="button" class="btn btn-danger">Payer</button>
+					<button type="button" class="btn btn-danger payerVotreOrdonnanceC" data-toggle="modal" data-target="#basicModal">Payer</button>
 				</div>
 			</div>
 		</div>
 	</div>
+	
+  <!-- basic modal -->
+  <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h4 class="modal-title" id="myModalLabel">Confirmation de votre achat</h4>
+		</div>
+		<div class="modal-body">
+			
+		  <h4>Votre achat est approuvé. Voulez vous avec livraison?</h4>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-default" data-dismiss="modal" onclick="refuseFactureMOOW()">Non</button>
+		  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="messageDeLivraison()">Oui</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+  <div id="id01" class="w3-modal" style="padding-top: 150px;">
+	<div class="w3-modal-content" style="padding-bottom:47px;">
+	<div class="w3-container" >
+		<span onclick="quitMessageDeLivraison()"
+		 class="w3-button w3-display-topright">&times;</span>
+		 <img src="assets/images/undraw_deliveries_2r4y.svg" alt="">
+		
+		</div>
+     </div>
+   </div>
+
+   <div class="modal fade" id="modaleAceptFacturactionDelivry" tabindex="-1" role="dialog"
+   aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+	   <div class="modal-content">
+		   <div class="modal-header">
+			   
+		   </div>
+		   <div class="modal-body">
+			   <img src="assets/images/undraw_deliveries_2r4y.svg" alt="" style="width: 100%; height: 100%;">
+			   <div>
+				<strong><p style="color: black">Nous vous remercions énormément d'avoir effectué votre achat. Votre colis de médicaments vous sera livré dans quelques minutes. </p></strong>
+			   </div>
+		   </div>
+		   <div class="modal-footer">
+			   <button type="button" class="btn btn-info" data-dismiss="modal"
+				   onclick="refuseFactureMOOW()">D'accord</button>
+		   </div>
+	   </div>
+   </div>
+</div>
+
+  <script>
+
+	var ouvrirchatP = document.querySelectorAll('.payerVotreOrdonnanceC');
+		ouvrirchatP.forEach((p)=>{
+			p.addEventListener('click', function(){
+				console.log('opopopoppopopop')
+				$('#modaleAceptFacturactionMOOW').modal('hide')
+				$('#modaleAceptFacturactionMTN').modal('hide')
+				$('#modaleAceptFacturactionUBA').modal('hide')
+			})
+		})
+
+		function messageDeLivraison () {
+			
+		setTimeout(()=>{
+			$('#modaleAceptFacturactionDelivry').modal({
+				show: true,
+				backdrop: 'static',
+				keyboard: true
+			})
+			
+				},500)
+	}
+	function quitMessageDeLivraison (){
+		document.getElementById('id01').style.display='none'
+		$('#modaleAceptFacturactionMOOW').modal('hide')
+				$('#modaleAceptFacturactionMTN').modal('hide')
+				$('#modaleAceptFacturactionUBA').modal('hide')
+	}
+</script>
 	<!-------end modaleAceptFacturactionMOOW---------->
 
 	<script src="assets/js/jquery.min.js"></script>
